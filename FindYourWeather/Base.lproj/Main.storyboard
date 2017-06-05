@@ -1,26 +1,176 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6eg-wl-39q">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Map View Controller-->
+        <scene sceneID="Gmn-s6-gy9">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="zJW-ft-c1H" customClass="FYWMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="0Xa-gL-NS8"/>
+                        <viewControllerLayoutGuide type="bottom" id="2aD-u6-dAI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="1Js-4B-0QR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Uy-DE-c95" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHd-2C-rDC">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="git-o9-ono">
+                                        <rect key="frame" x="8" y="7" width="184" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="My location" image="myLocation">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="locateUser:" destination="zJW-ft-c1H" eventType="touchUpInside" id="TSl-BE-qJw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xf-Y4-H2s">
+                                        <rect key="frame" x="183" y="7" width="184" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Scan QR-Code" image="qrScan">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openQRReader:" destination="zJW-ft-c1H" eventType="touchUpInside" id="In5-IP-em8"/>
+                                            <segue destination="bba-Dy-5YE" kind="presentation" id="16p-q5-tOg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="git-o9-ono" secondAttribute="bottom" constant="7" id="3Lf-O6-lOb"/>
+                                    <constraint firstItem="7Xf-Y4-H2s" firstAttribute="width" secondItem="git-o9-ono" secondAttribute="width" id="5ak-Wr-cWf"/>
+                                    <constraint firstItem="7Xf-Y4-H2s" firstAttribute="height" secondItem="git-o9-ono" secondAttribute="height" id="9DN-b7-ocC"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Xf-Y4-H2s" secondAttribute="bottom" constant="7" id="KRC-PU-qf5"/>
+                                    <constraint firstItem="git-o9-ono" firstAttribute="leading" secondItem="sHd-2C-rDC" secondAttribute="leading" constant="8" id="Of6-fy-Xww"/>
+                                    <constraint firstItem="git-o9-ono" firstAttribute="top" secondItem="sHd-2C-rDC" secondAttribute="top" constant="7" id="Rwh-J5-FWN"/>
+                                    <constraint firstItem="7Xf-Y4-H2s" firstAttribute="centerY" secondItem="sHd-2C-rDC" secondAttribute="centerY" id="SQw-su-B4u"/>
+                                    <constraint firstItem="git-o9-ono" firstAttribute="centerY" secondItem="sHd-2C-rDC" secondAttribute="centerY" id="V0W-A2-d57"/>
+                                    <constraint firstAttribute="trailing" secondItem="git-o9-ono" secondAttribute="trailing" constant="183" id="cyu-uU-tuz"/>
+                                    <constraint firstItem="7Xf-Y4-H2s" firstAttribute="leading" secondItem="sHd-2C-rDC" secondAttribute="leading" constant="183" id="fHH-ag-lGL"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Xf-Y4-H2s" secondAttribute="trailing" constant="8" id="iZc-xe-W9m"/>
+                                    <constraint firstItem="7Xf-Y4-H2s" firstAttribute="top" secondItem="sHd-2C-rDC" secondAttribute="top" constant="7" id="q4v-js-8lJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="qRq-Sf-22c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Uy-DE-c95" firstAttribute="leading" secondItem="1Js-4B-0QR" secondAttribute="leading" id="3LX-o5-ebI"/>
+                            <constraint firstItem="2aD-u6-dAI" firstAttribute="top" secondItem="sHd-2C-rDC" secondAttribute="bottom" id="6Ju-hN-7rU"/>
+                            <constraint firstItem="sHd-2C-rDC" firstAttribute="top" secondItem="9Uy-DE-c95" secondAttribute="bottom" id="KnQ-Oh-4gn"/>
+                            <constraint firstAttribute="trailing" secondItem="9Uy-DE-c95" secondAttribute="trailing" id="M8B-iZ-jIA"/>
+                            <constraint firstItem="9Uy-DE-c95" firstAttribute="top" secondItem="1Js-4B-0QR" secondAttribute="top" constant="64" id="MPk-lW-Zoa"/>
+                            <constraint firstItem="sHd-2C-rDC" firstAttribute="leading" secondItem="1Js-4B-0QR" secondAttribute="leading" id="UGC-sQ-EEf"/>
+                            <constraint firstAttribute="trailing" secondItem="sHd-2C-rDC" secondAttribute="trailing" id="Udz-ys-cA6"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lid-e4-a92"/>
+                    <connections>
+                        <outlet property="barView" destination="sHd-2C-rDC" id="tj3-hQ-Ok5"/>
+                        <outlet property="mapView" destination="9Uy-DE-c95" id="61h-M4-MeR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FW5-pr-iMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1040.8" y="145.27736131934034"/>
+        </scene>
+        <!--Reader View Controller-->
+        <scene sceneID="HuN-WJ-8Qv">
+            <objects>
+                <viewController id="bba-Dy-5YE" customClass="FYWQRReaderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XkL-Cg-ZSe"/>
+                        <viewControllerLayoutGuide type="bottom" id="FhD-Xg-mAJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gVO-IT-bIz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jX8-GK-y74">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-Ik-SXa">
+                                <rect key="frame" x="315" y="607" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dp2-zI-R1z"/>
+                                    <constraint firstAttribute="width" constant="30" id="mF9-5p-yca"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeScanner:" destination="bba-Dy-5YE" eventType="touchUpInside" id="Tph-T2-FgS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="focusFrame" translatesAutoresizingMaskIntoConstraints="NO" id="gs9-YX-Dx5">
+                                <rect key="frame" x="20" y="165.5" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gs9-YX-Dx5" secondAttribute="height" multiplier="1:1" id="w8G-V1-fMX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FG8-Ik-SXa" secondAttribute="trailing" constant="30" id="8UI-FR-FNe"/>
+                            <constraint firstItem="jX8-GK-y74" firstAttribute="leading" secondItem="gVO-IT-bIz" secondAttribute="leading" id="FfV-5B-MT5"/>
+                            <constraint firstAttribute="trailing" secondItem="jX8-GK-y74" secondAttribute="trailing" id="Ncr-c1-VDy"/>
+                            <constraint firstAttribute="trailing" secondItem="gs9-YX-Dx5" secondAttribute="trailing" constant="20" id="TbW-IT-ggY"/>
+                            <constraint firstItem="gs9-YX-Dx5" firstAttribute="centerY" secondItem="gVO-IT-bIz" secondAttribute="centerY" id="Yeb-Za-dyl"/>
+                            <constraint firstItem="FhD-Xg-mAJ" firstAttribute="top" secondItem="jX8-GK-y74" secondAttribute="bottom" id="f5a-xc-etM"/>
+                            <constraint firstItem="gs9-YX-Dx5" firstAttribute="leading" secondItem="gVO-IT-bIz" secondAttribute="leading" constant="20" id="ftw-Eh-RCi"/>
+                            <constraint firstAttribute="bottom" secondItem="FG8-Ik-SXa" secondAttribute="bottom" constant="30" id="hZk-su-lZz"/>
+                            <constraint firstItem="gs9-YX-Dx5" firstAttribute="centerX" secondItem="gVO-IT-bIz" secondAttribute="centerX" id="ukt-IC-L1f"/>
+                            <constraint firstItem="jX8-GK-y74" firstAttribute="top" secondItem="gVO-IT-bIz" secondAttribute="top" id="zVs-2e-OIf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="jX8-GK-y74" id="6WB-HF-S7X"/>
+                        <outlet property="closeReader" destination="FG8-Ik-SXa" id="nd4-0Z-gno"/>
+                        <outlet property="focusFrame" destination="gs9-YX-Dx5" id="I3X-fB-juZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZZ-vn-WJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="144.3778110944528"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mDk-e9-nAx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6eg-wl-39q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="3Jd-B0-887">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zJW-ft-c1H" kind="relationship" relationship="rootViewController" id="z9j-wD-XKq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pju-tr-qmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="145.27736131934034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="32" height="32"/>
+        <image name="focusFrame" width="512" height="512"/>
+        <image name="myLocation" width="16" height="16"/>
+        <image name="qrScan" width="16" height="16"/>
+    </resources>
 </document>

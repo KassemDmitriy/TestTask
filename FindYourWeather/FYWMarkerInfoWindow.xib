@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FYWMarkerInfoWindow">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoBG" translatesAutoresizingMaskIntoConstraints="NO" id="Efk-UP-UD3">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vvg-rb-HbA">
+                    <rect key="frame" x="16" y="18" width="64" height="64"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="Rye-Za-Wca"/>
+                        <constraint firstAttribute="width" constant="64" id="ynh-dD-Yde"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="81 C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXz-iM-uUF">
+                    <rect key="frame" x="90" y="55" width="194" height="34"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiev" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8m-0R-rV4">
+                    <rect key="frame" x="89" y="13" width="195" height="34"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="v8m-0R-rV4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="Ftf-CT-eHe"/>
+                <constraint firstItem="v8m-0R-rV4" firstAttribute="leading" secondItem="vvg-rb-HbA" secondAttribute="trailing" constant="9" id="HU0-XT-60S"/>
+                <constraint firstAttribute="trailing" secondItem="JXz-iM-uUF" secondAttribute="trailing" constant="16" id="Ig7-Yf-ZhA"/>
+                <constraint firstItem="Efk-UP-UD3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JXx-Yu-2Ji"/>
+                <constraint firstItem="vvg-rb-HbA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KlN-d6-pja"/>
+                <constraint firstAttribute="bottom" secondItem="Efk-UP-UD3" secondAttribute="bottom" id="LGG-9g-gDa"/>
+                <constraint firstAttribute="trailing" secondItem="Efk-UP-UD3" secondAttribute="trailing" id="Uf6-8A-vmK"/>
+                <constraint firstItem="JXz-iM-uUF" firstAttribute="top" secondItem="v8m-0R-rV4" secondAttribute="bottom" constant="8" id="V9b-9J-vzB"/>
+                <constraint firstItem="JXz-iM-uUF" firstAttribute="leading" secondItem="vvg-rb-HbA" secondAttribute="trailing" constant="10" id="VnR-ab-1n0"/>
+                <constraint firstItem="Efk-UP-UD3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eTP-Hw-WMp"/>
+                <constraint firstAttribute="bottom" secondItem="JXz-iM-uUF" secondAttribute="bottom" constant="11" id="hUG-2f-9lX"/>
+                <constraint firstItem="vvg-rb-HbA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="hZa-OT-dSV"/>
+                <constraint firstItem="JXz-iM-uUF" firstAttribute="height" secondItem="v8m-0R-rV4" secondAttribute="height" id="n7y-pK-igt"/>
+                <constraint firstAttribute="trailing" secondItem="v8m-0R-rV4" secondAttribute="trailing" constant="16" id="ogz-f6-Fnr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="infoBG" destination="Efk-UP-UD3" id="dZ9-BN-Bhl"/>
+                <outlet property="name" destination="v8m-0R-rV4" id="yWN-ra-zDs"/>
+                <outlet property="temperature" destination="JXz-iM-uUF" id="1O0-El-YB6"/>
+                <outlet property="weatherImage" destination="vvg-rb-HbA" id="N4N-ou-zwD"/>
+            </connections>
+            <point key="canvasLocation" x="-44" y="-306"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="InfoBG" width="150" height="50"/>
+    </resources>
+</document>
