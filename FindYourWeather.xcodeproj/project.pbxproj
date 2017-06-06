@@ -25,6 +25,7 @@
 		6CAA56881EDDD2D600F81B19 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA56871EDDD2D600F81B19 /* SystemConfiguration.framework */; };
 		6CAA568A1EDDD2F200F81B19 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA56891EDDD2F200F81B19 /* MobileCoreServices.framework */; };
 		6CAA568C1EDDD30C00F81B19 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CAA568B1EDDD30C00F81B19 /* CFNetwork.framework */; };
+		6CB4E0CE1EE5D0E500297F7D /* FYWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4E0CD1EE5D0E500297F7D /* FYWDetailViewController.m */; };
 		85B25E85E4A9E0E27CEBFAE6 /* libPods-FindYourWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B4D715B0BBCADEBEEE84F6 /* libPods-FindYourWeather.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		6CAA56871EDDD2D600F81B19 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6CAA56891EDDD2F200F81B19 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		6CAA568B1EDDD30C00F81B19 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6CB4E0CC1EE5D0E500297F7D /* FYWDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWDetailViewController.h; sourceTree = "<group>"; };
+		6CB4E0CD1EE5D0E500297F7D /* FYWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWDetailViewController.m; sourceTree = "<group>"; };
 		BC0FE5917A815F8C1DB4A732 /* Pods-FindYourWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindYourWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FindYourWeather/Pods-FindYourWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		CD1CEFDD89C4494F4EFCCB5E /* Pods-FindYourWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindYourWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindYourWeather/Pods-FindYourWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +170,8 @@
 				6C9E69811EDEF58300794303 /* FYWMapViewController.m */,
 				6C91CAFD1EE0495C003674D4 /* FYWQRReaderViewController.h */,
 				6C91CAFE1EE0495C003674D4 /* FYWQRReaderViewController.m */,
+				6CB4E0CC1EE5D0E500297F7D /* FYWDetailViewController.h */,
+				6CB4E0CD1EE5D0E500297F7D /* FYWDetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				6C9E69851EDF016100794303 /* FYWMarkerInfoWindow.m in Sources */,
 				6CAA566A1EDDC9B900F81B19 /* AppDelegate.m in Sources */,
 				6C9B6D1A1EE087B2001522C5 /* FYWWeather.m in Sources */,
+				6CB4E0CE1EE5D0E500297F7D /* FYWDetailViewController.m in Sources */,
 				6C91CAFF1EE0495C003674D4 /* FYWQRReaderViewController.m in Sources */,
 				6CAA56671EDDC9B800F81B19 /* main.m in Sources */,
 				6C9E69821EDEF58300794303 /* FYWMapViewController.m in Sources */,

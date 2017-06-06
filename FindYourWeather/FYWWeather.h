@@ -16,6 +16,14 @@
 
 @property (nonatomic, strong) NSString* condition;
 
+@property (nonatomic, strong) NSString* latitude;
+
+@property (nonatomic, strong) NSString* longitude;
+
+@property (nonatomic, strong) NSString* visibility;
+
+@property (nonatomic, strong) NSString* country;
+
 @property (nonatomic, strong) NSString* cityName;
 
 @property (nonatomic, strong) NSString* cityID;
@@ -30,6 +38,8 @@
 @property (nonatomic) int temperatureMax;
 
 @property (nonatomic) int humidity;
+
+@property (nonatomic) int pressure;
 
 @property (nonatomic) float windSpeed;
 

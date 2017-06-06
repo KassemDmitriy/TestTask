@@ -29,7 +29,12 @@
             _temperatureFahrenheit = [self kelvinToFahrenheit:[NSNumber numberWithInt:temperature]];
 
         }
-
+        
+        int pressure =
+        [dictionary[@"main"][@"pressure"] intValue];
+        if (pressure) {
+            _pressure = pressure;
+        }
         
         int temperatureMax =
         [dictionary[@"main"][@"temp_max"] intValue];
@@ -47,6 +52,16 @@
         [dictionary[@"wind"][@"speed"] floatValue];
         if (windSpeed) {
             _windSpeed = windSpeed;
+        }
+        
+        NSString *latitude = dictionary[@"coord"][@"lat"];
+        if (latitude) {
+            _latitude = latitude;
+        }
+        
+        NSString *longitude = dictionary[@"coord"][@"lon"];
+        if (longitude) {
+            _longitude = longitude;
         }
         
         NSString *cityId = dictionary[@"id"];

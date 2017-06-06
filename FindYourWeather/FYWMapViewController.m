@@ -13,6 +13,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "FYWWeatherApiManager.h"
 #import "FYWWeather.h"
+#import "FYWDetailViewController.h"
 
 @interface FYWMapViewController () <CLLocationManagerDelegate,GMSMapViewDelegate> {
     
@@ -95,7 +96,7 @@
     
     NSURL *imageURL = [NSURL URLWithString:currentWeather.iconUrl];
     
-    infoWindowView.weatherImage.backgroundColor = [UIColor whiteColor];
+    infoWindowView.weatherImage.backgroundColor = [UIColor colorWithWhite:1 alpha:0.7];
     infoWindowView.weatherImage.layer.cornerRadius = 4.0;
     infoWindowView.infoBG.layer.cornerRadius = 4.0;
     infoWindowView.infoBG.layer.masksToBounds = YES;
@@ -116,15 +117,27 @@
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     
+    
+    FYWDetailViewController *popUpVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailView"];
+
     if ([marker isEqual:myPosition]) {
         
-        
-        
+        popUpVC.weatherObject = myWeather;
+
     } else {
         
-        
+        popUpVC.weatherObject = scanWeather;
         
     }
+    
+    popUpVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    popUpVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController presentViewController:popUpVC animated:YES completion:nil];
+    });
+
+    
     
 }
 
