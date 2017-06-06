@@ -224,6 +224,7 @@
 				TargetAttributes = {
 					6CAA56611EDDC9B700F81B19 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = E9K3KR7Y3C;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -449,7 +450,7 @@
 			baseConfigurationReference = BC0FE5917A815F8C1DB4A732 /* Pods-FindYourWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = E9K3KR7Y3C;
 				INFOPLIST_FILE = FindYourWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -463,7 +464,7 @@
 			baseConfigurationReference = CD1CEFDD89C4494F4EFCCB5E /* Pods-FindYourWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = E9K3KR7Y3C;
 				INFOPLIST_FILE = FindYourWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
